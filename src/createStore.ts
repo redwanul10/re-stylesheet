@@ -1,5 +1,4 @@
-// import { useSyncExternalStore } from "react";
-import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/with-selector';
+import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector';
 import shallowEqual from './utill/shallowEqual';
 
 const initStore = (initialState: object) => {
