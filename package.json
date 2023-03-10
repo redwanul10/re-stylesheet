@@ -78,8 +78,10 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "use-sync-external-store": "*"
+    "react-native": "*"
+  },
+  "dependencies": {
+    "use-sync-external-store": "^1.0.0"
   },
   "engines": {
     "node": ">= 16.0.0"
