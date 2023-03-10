@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { View, Text, SafeAreaView, Pressable } from 'react-native';
-// import {  } from 're-stylesheet';
-import ReStyleSheet, { Provider, useMediaQuery } from 're-stylesheet';
+// import {  } from 'rn-re-stylesheet';
+import ReStyleSheet, { Provider, useMediaQuery } from 'rn-re-stylesheet';
 
 const useStyle = ReStyleSheet(({ breakpoints }) => ({
   header: {

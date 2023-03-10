@@ -1,5 +1,5 @@
 {
-  "name": "re-stylesheet",
+  "name": "rn-re-stylesheet",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index.js",
@@ -40,13 +40,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/redwanul10/re-stylesheet",
+  "repository": "https://github.com/redwanul10/rn-re-stylesheet",
   "author": "redwanul islam <redwanulislam12@gmail.com> (https://github.com/redwanul10)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/redwanul10/re-stylesheet/issues"
+    "url": "https://github.com/redwanul10/rn-re-stylesheet/issues"
   },
-  "homepage": "https://github.com/redwanul10/re-stylesheet#readme",
+  "homepage": "https://github.com/redwanul10/rn-re-stylesheet#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

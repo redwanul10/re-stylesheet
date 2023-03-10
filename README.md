@@ -1,17 +1,17 @@
-# re-stylesheet
+# rn-re-stylesheet
 
 test
 
 ## Installation
 
 ```sh
-npm install re-stylesheet
+npm install rn-re-stylesheet
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 're-stylesheet';
+import { multiply } from 'rn-re-stylesheet';
 
 // ...
 

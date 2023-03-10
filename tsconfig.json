@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "re-stylesheet": ["./src/index"]
+      "rn-re-stylesheet": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
