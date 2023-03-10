@@ -20,7 +20,6 @@ const initializeBreakpoints = (breakpoints: {
     }
   );
 
-  console.log('configuredBreakpoints', configuredBreakpoints);
   return configuredBreakpoints;
 };
 

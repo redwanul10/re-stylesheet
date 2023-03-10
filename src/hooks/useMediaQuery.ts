@@ -51,7 +51,7 @@ const useMediaQuery = (props: Props): string | boolean => {
       );
       setIsActive(result);
 
-      if (listenerRef.current) listenerRef.current?.remove();
+      if (listenerRef?.current?.remove) listenerRef.current?.remove();
       listenerRef.current = Dimensions.addEventListener(
         'change',
         ({ window }) => {
@@ -68,10 +68,9 @@ const useMediaQuery = (props: Props): string | boolean => {
         }
       );
     }
-    return () => listenerRef.current?.remove();
+    return () => listenerRef?.current?.remove();
   }, [props?.min, props?.max]);
 
-  console.log(device);
   return props ? isActive : device;
 };
 

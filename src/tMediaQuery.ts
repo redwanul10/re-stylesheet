@@ -9,14 +9,6 @@ import type {
   StyleObject,
 } from './types';
 
-export const defaultBreakPoints = {
-  xs: 0,
-  sm: 411,
-  md: 568,
-  lg: 768,
-  xl: 1024,
-};
-
 const generateMediaQueryMethod = (operator: Operator) => {
   return (deviceType: string): string => {
     return `@ ${deviceType} - ${operator}`;
@@ -120,8 +112,6 @@ export const processMediaQuery = (
         ...mediaQueryRawStyle,
       },
     };
-
-    // mediaQueryRawStyle = {};
   }
   return [newDynamicValues, newRawStyles];
 };

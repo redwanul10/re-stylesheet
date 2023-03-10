@@ -55,8 +55,13 @@ export type Query = {
     | number
     | ((options: { [key: indexType]: any }) => any);
 };
+
+type theme = {
+  [key: indexType]: any;
+};
 export type breakpoint = {
   breakpoints: BreakPointMethods;
+  theme: theme;
 };
 
 type RNStyle = ViewStyle & TextStyle & ImageStyle;

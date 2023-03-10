@@ -1,16 +1,15 @@
 import * as React from 'react';
 
 import { View, Text, SafeAreaView, Pressable } from 'react-native';
-// import {  } from 'rn-re-stylesheet';
-import ReStyleSheet, { Provider, useMediaQuery } from 'rn-re-stylesheet';
+import { Provider, ReStyleSheet } from 'rn-re-stylesheet';
 
-const useStyle = ReStyleSheet(({ breakpoints }) => ({
+const useStyle = ReStyleSheet(({ theme, breakpoints }) => ({
   header: {
-    backgroundColor: 'green',
+    backgroundColor: theme.primaryColor,
     color: (props) => props.activeColor,
     fontWeight: 'bold',
     [breakpoints?.only('large')]: {
-      backgroundColor: 'yellow',
+      // backgroundColor: 'yellow',
       // color: 'black',
       paddingVertical: 50,
     },
@@ -18,34 +17,35 @@ const useStyle = ReStyleSheet(({ breakpoints }) => ({
 }));
 
 const Demo = () => {
-  // const { width } = useWindowDimensions();
   const [toggleColor, setToggleColor] = React.useState(false);
   const { styles, deviceType } = useStyle(
     { activeColor: toggleColor ? 'black' : 'white' },
     true
   );
 
-  let between = useMediaQuery({ min: 500, max: 700 });
+  // let between = useMediaQuery({ min: 500, max: 700 });
 
   return (
     <View>
       <Text style={styles.header}>
-        Demo is: {deviceType} {between ? 'yes' : 'no'}
+        Demo is: {deviceType}
+        {/* {between ? 'yes' : 'no'} */}
       </Text>
       <Pressable onPress={() => setToggleColor(!toggleColor)}>
-        <Text>Toggle Color</Text>
+        <Text>Toggle color</Text>
       </Pressable>
     </View>
   );
 };
 
 export default function App() {
+  const [toggleTheme, setToggleTheme] = React.useState(false);
   return (
     <SafeAreaView>
       <Provider
         theme={{
-          themeId: 'dark',
-          primaryColor: 'yellow',
+          themeId: toggleTheme ? 'dark' : 'light',
+          primaryColor: toggleTheme ? 'green' : 'yellow',
         }}
         breakpoints={{
           small: 0,
@@ -55,6 +55,9 @@ export default function App() {
       >
         <View style={{}}>
           <Text>Result is: </Text>
+          <Pressable onPress={() => setToggleTheme(!toggleTheme)}>
+            <Text>Toggle Theme</Text>
+          </Pressable>
           <Demo />
         </View>
       </Provider>

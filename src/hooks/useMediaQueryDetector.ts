@@ -27,7 +27,7 @@ const useMediaQueryDetector = (data: {
   }, [data.defaultBreakPoints]);
 
   useEffect(() => {
-    if (listenerRef.current) listenerRef.current?.remove();
+    if (listenerRef?.current?.remove) listenerRef?.current?.remove();
     listenerRef.current = Dimensions.addEventListener(
       'change',
       ({ window }) => {
@@ -43,7 +43,7 @@ const useMediaQueryDetector = (data: {
         }
       }
     );
-    return () => listenerRef.current?.remove();
+    return () => listenerRef?.current?.remove();
   }, [data.defaultBreakPoints]);
 };
 

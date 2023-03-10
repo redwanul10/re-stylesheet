@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { breakPointMethods } from './tMediaQuery';
 import initializeBreakpoints, {
   BreakpointDetail,
@@ -29,25 +28,11 @@ const ResponsiveProvider = ({ breakpoints, theme, children }: Props) => {
     defaultBreakPoints: breakpoints,
   });
 
-  // useEffect(() => {
-  //   console.log("device type chaning");
-  //   store.store.setState((state) => ({ ...state, device }));
-  // }, [device, width]);
-
-  // useEffect(() => {
-  //   store.store.setState((state) => ({
-  //     ...state,
-  //     theme: { ...state.theme, ...theme }
-  //   }));
-  // }, [theme]);
-
   useEffect(() => {
     setDetailBreakPoints(initializeBreakpoints(breakpoints));
-    console.log('provider useeffect == ');
+
     store.store.setState({
-      // device,
       device: getDevicetype(ScreenWidth, breakpoints),
-      // screenWidth: width,
       width: ScreenWidth,
       defaultBreakPoints: breakpoints,
       breakpoints: {
@@ -63,30 +48,14 @@ const ResponsiveProvider = ({ breakpoints, theme, children }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <>
-      {/* {detailBreakPoints && (
-        <ProviderContext.Provider
-          value={{
-            device,
-            // screenWidth: width,
-            width,
-            defaultBreakPoints: breakpoints,
-            theme: {
-              ...theme,
-              breakpoints: {
-                ...detailBreakPoints,
-                ...breakPointMethods
-              }
-            }
-          }}
-        >
-          {children}
-        </ProviderContext.Provider>
-      )} */}
-      {detailBreakPoints && children}
-    </>
-  );
+  useEffect(() => {
+    store.store.setState((state: any) => ({
+      ...state,
+      theme: { ...state.theme, ...theme },
+    }));
+  }, [theme]);
+
+  return <>{detailBreakPoints && children}</>;
 };
 
 export default ResponsiveProvider;
